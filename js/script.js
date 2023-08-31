@@ -1,4 +1,7 @@
 var questionNumber = 0
+var startButton = document.querySelector("#startButton")
+startButton.addEventListener("click", displayQuestion);
+
 
 
 //question data
@@ -10,10 +13,9 @@ var questions = [
     {question: "a very useful tool used during development and debugging for printing content to the debugger is:", responses: ["javascript","terminal/bash","for loops","console.log"], answer: "console.log"},
 ]
 
-console.log(questions);
-
-
 function displayQuestion() {
+    var start = document.querySelector("#start");
+    start.innerHTML = "";
     var main = document.querySelector("#main");
     main.innerHTML = "";
     var h1El = document.createElement("h1");
@@ -42,6 +44,11 @@ function answerOnClick(event) {
     }
     questionNumber++
     displayQuestion()
+    
 }
 
-displayQuestion()
+
+// what's left:
+// add start up and ending screen
+// add clock
+// add clock
