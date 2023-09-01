@@ -1,6 +1,9 @@
 var questionNumber = 0
 var startButton = document.querySelector("#startButton")
+var timeEl = document.querySelector("#time");
+var secondsLeft = 60;
 startButton.addEventListener("click", displayQuestion);
+startButton.addEventListener("click", setTime);
 
 
 
@@ -14,6 +17,8 @@ var questions = [
 ]
 
 function displayQuestion() {
+    
+    if (questionNumber < 5) {
     var start = document.querySelector("#start");
     start.innerHTML = "";
     var main = document.querySelector("#main");
@@ -32,10 +37,12 @@ function displayQuestion() {
         button.textContent = questions[questionNumber].responses[i];
         answers.appendChild(button);
     }
+} else {
+    allDone()
+}
 }
 
 function answerOnClick(event) {
-    console.log(event.target.textContent)
     if (event.target.textContent === questions[questionNumber].answer) {
         console.log("correct");
     } else {
@@ -47,8 +54,25 @@ function answerOnClick(event) {
     
 }
 
+    function allDone() {
+    var start = document.querySelector("#start");
+    start.innerHTML = "";
+    var main = document.querySelector("#main");
+    main.innerHTML = "";
+    var h1El = document.createElement("h1");
+    h1El.textContent = "All Done!";
+    main.appendChild(h1El);
+    timeEl.textContent = secondsLeft;
+}
 
-// what's left:
-// add start up and ending screen
-// add clock
-// add clock
+function setTime() {
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft;
+
+    if(secondsLeft === 0  || questionNumber > 4) {
+      clearInterval(timerInterval);
+    }
+
+  }, 1000);
+}
