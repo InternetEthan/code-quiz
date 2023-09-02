@@ -4,6 +4,8 @@
 
 This page is a simple coding quiz. It will record and keep track of your local scores. 
 
+Link to deployed site: https://internetethan.github.io/code-quiz/
+
 ![webpage screenshot](./assets/internetethan.github.io_code-quiz_.png)
 
 ## Installation
