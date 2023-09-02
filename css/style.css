@@ -1,0 +1,37 @@
+* {
+    background-color: #4a786a;
+    color:#ffffffca;
+    list-style-type: none;
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 5px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    display: block;
+    background-color: #8dd1ad;
+    color: black;
+    width: 30%;
+    padding: 5px;
+}
+
+input {
+    display: block;
+    background-color: #8dd1ad;
+    width: 30%;
+    padding: 5px;
+}
+
+ul {
+    font-size: 110%;
+    font-weight: bolder;
+}
+
+li {
+    font-size: 100%;
+    font-weight: normal;
+}
